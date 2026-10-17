@@ -1,3 +1,4 @@
+Gantt di test
 ```mermaid
 gantt
     title CoreDel-RGD
