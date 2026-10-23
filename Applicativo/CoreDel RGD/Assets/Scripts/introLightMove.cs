@@ -1,21 +1,27 @@
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class introLightMove : MonoBehaviour
 {
-    
+    public introLogoMove logoMove;
     private float speed = 0.35f;
-    
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.right * speed);
+        transform.position += Vector3.right * speed;
 
-        if (transform.position.x > 12f)
+        if (transform.position.x >= 9f)
         {
-            SceneManager.LoadScene("SampleScene");
+            Debug.Log("La luce ha raggiunto X >= 9! Attivo il logo.");
+            if (logoMove != null)
+            {
+                logoMove.spostaLogo();
+            }
+            else
+            {
+                Debug.LogError("Errore: script non funzionante");
+            }
+            enabled = false; // Disabilita questo script dopo aver spostato il logo
         }
     }
 }
