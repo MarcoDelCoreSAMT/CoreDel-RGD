@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class spinButton : MonoBehaviour
 {
-    public iconSpinRotate iconSpinRotate;
 
     [SerializeField] private SpinRullo[] rulli;   // lista dei rulli
     [SerializeField] private float cooldown = 3f;
@@ -11,7 +10,6 @@ public class spinButton : MonoBehaviour
 
     private void OnMouseDown()
     {
-        iconSpinRotate = true;
 
         if (Time.time - lastSpinTime < cooldown) return;
 
